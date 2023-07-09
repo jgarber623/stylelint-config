@@ -14,13 +14,19 @@
   "main": "index.js",
   "repository": "github:jgarber623/stylelint-config",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jasmine"
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "devDependencies": {
-    "@jgarber/eslint-config": "^1.1.0"
+    "@jgarber/eslint-config": "^1.1.0",
+    "globals": "^13.20.0",
+    "jasmine": "^5.0.2",
+    "stylelint": "^15.10.1",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3"
   },
   "peerDependencies": {
     "stylelint": ">=15.10.1",
