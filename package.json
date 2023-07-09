@@ -11,22 +11,16 @@
   "bugs": "https://github.com/jgarber623/stylelint-config/issues",
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
-  "files": [],
   "main": "index.js",
   "repository": "github:jgarber623/stylelint-config",
   "scripts": {
-    "test": "eslint ."
+    "lint": "eslint ."
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "devDependencies": {
-    "@jgarber/eslint-config": "^0.2.0"
-  },
-  "peerDependencies": {
-    "stylelint": "^15.8.0",
-    "stylelint-config-standard": "^33.0.0",
-    "stylelint-order": "^6.0.3"
+    "@jgarber/eslint-config": "^1.1.0"
   },
   "publishConfig": {
     "access": "public"
