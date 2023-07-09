@@ -4,4 +4,4 @@ module.exports = {
   rules: {
     'order/properties-alphabetical-order': true
   }
-}
+};
