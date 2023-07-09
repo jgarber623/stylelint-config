@@ -1,6 +1,0 @@
-{
-  "extends": "@jgarber/eslint-config",
-  "env": {
-    "node": true
-  }
-}
