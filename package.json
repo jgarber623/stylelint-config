@@ -1,7 +1,7 @@
 {
   "name": "@jgarber/stylelint-config",
   "version": "0.3.0",
-  "description": "Shareable Stylelint configurations.",
+  "description": "Shareable Stylelint configuration.",
   "keywords": [
     "stylelint",
     "stylelintconfig",
@@ -21,6 +21,11 @@
   },
   "devDependencies": {
     "@jgarber/eslint-config": "^1.1.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">=15.10.1",
+    "stylelint-config-standard": ">=34.0.0",
+    "stylelint-order": ">=6.0.3"
   },
   "publishConfig": {
     "access": "public"
