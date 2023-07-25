@@ -1,6 +1,6 @@
 {
   "name": "@jgarber/stylelint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shareable Stylelint configuration.",
   "keywords": [
     "stylelint",
@@ -23,17 +23,17 @@
   "devDependencies": {
     "@jgarber/eslint-config": "^1.1.0",
     "globals": "^13.20.0",
-    "jasmine": "^5.0.2",
-    "stylelint": "^15.10.1",
+    "jasmine": "^5.1.0",
+    "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-stylistic": "^0.4.3"
   },
   "peerDependencies": {
-    "stylelint": ">=15.10.1",
-    "stylelint-config-standard": ">=34.0.0",
-    "stylelint-order": ">=6.0.3",
-    "stylelint-stylistic": ">=0.4.3"
+    "stylelint": ">=15.10",
+    "stylelint-config-standard": ">=34.0",
+    "stylelint-order": ">=6.0",
+    "stylelint-stylistic": ">=0.4"
   },
   "publishConfig": {
     "access": "public"
