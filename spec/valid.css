@@ -1,0 +1,7 @@
+/* comment */
+@charset "utf-8";
+
+@import url("foo.css");
+@import url("bar.css");
+
+html { margin: 0; }
