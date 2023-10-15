@@ -20,20 +20,19 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "devDependencies": {
-    "@jgarber/eslint-config": "^1.1.1",
-    "globals": "^13.20.0",
-    "jasmine": "^5.1.0",
-    "stylelint": "^15.10.2",
+  "dependencies": {
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-stylistic": "^0.4.3"
   },
+  "devDependencies": {
+    "@jgarber/eslint-config": "^1.1.1",
+    "globals": "^13.20.0",
+    "jasmine": "^5.1.0",
+    "stylelint": "^15.10.2"
+  },
   "peerDependencies": {
-    "stylelint": ">=15.10",
-    "stylelint-config-standard": ">=34.0",
-    "stylelint-order": ">=6.0",
-    "stylelint-stylistic": ">=0.4"
+    "stylelint": ">=15.10"
   },
   "publishConfig": {
     "access": "public"
