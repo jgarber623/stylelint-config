@@ -2,6 +2,10 @@
 
 Shareable [Stylelint](https://stylelint.io) configuration.
 
+[![npm](https://img.shields.io/npm/v/@jgarber/stylelint-config.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@jgarber/stylelint-config)
+[![Downloads](https://img.shields.io/npm/dt/@jgarber/stylelint-config.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@jgarber/stylelint-config)
+[![Build](https://img.shields.io/github/actions/workflow/status/jgarber623/stylelint-config/ci.yml?branch=main&logo=github&style=for-the-badge)](https://github.com/jgarber623/stylelint-config/actions/workflows/ci.yml)
+
 ## Installation
 
 ```sh
@@ -45,7 +49,6 @@ In a JavaScript file using [ECMAScript module (ESM)](https://nodejs.org/api/esm.
 
 ```js
 // stylelint.config.mjs
-
 import config from '@jgarber/stylelint-config';
 
 export default config;
