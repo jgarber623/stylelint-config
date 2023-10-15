@@ -28,7 +28,7 @@
     "stylelint-stylistic": "^0.4.3"
   },
   "devDependencies": {
-    "@jgarber/eslint-config": "^1.1.1",
+    "@jgarber/eslint-config": "^3.0.0",
     "stylelint": "^15.10.2"
   },
   "peerDependencies": {
