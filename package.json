@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@jgarber/eslint-config": "^3.0.0",
-    "stylelint": "^15.10.2"
+    "stylelint": "^15.10.3"
   },
   "peerDependencies": {
     "stylelint": ">=15.10"
