@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1 (2024-01-07)
+
+- 27149a fix: Fix package scope command
+
 ## 3.0.0 (2024-01-07)
 
 - 38cb74b breaking: Migrate to @stylistic/stylelint-config
