@@ -1,8 +1,5 @@
 module.exports = {
-  extends: [
-    'stylelint-config-standard',
-    'stylelint-stylistic/config'
-  ],
+  extends: ['stylelint-config-standard', '@stylistic/stylelint-config'],
   plugins: ['stylelint-order'],
   rules: {
     // Require an empty line before at-rules.
@@ -23,12 +20,12 @@ module.exports = {
 
     // Specify Unix or Windows linebreaks.
     //
-    // https://github.com/elirasza/stylelint-stylistic/tree/main/lib/rules/linebreaks
-    'stylistic/linebreaks': 'unix',
+    // https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/linebreaks
+    '@stylistic/linebreaks': 'unix',
 
     // Disallow the Unicode Byte Order Mark.
     //
-    // https://github.com/elirasza/stylelint-stylistic/tree/main/lib/rules/unicode-bom
-    'stylistic/unicode-bom': 'never'
+    // https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/unicode-bom
+    '@stylistic/unicode-bom': 'never'
   }
 };
