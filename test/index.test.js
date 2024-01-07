@@ -6,7 +6,7 @@ const config = require('../index');
 
 test('module.exports', t => {
   t.like(config, {
-    extends: ['stylelint-config-standard', 'stylelint-stylistic/config'],
+    extends: ['stylelint-config-standard', '@stylistic/stylelint-config'],
     plugins: ['stylelint-order']
   });
 });
@@ -29,13 +29,13 @@ test('loads configuration and invalidates incorrect syntax', async t => {
       errored: true,
       warnings: [
         { rule: 'order/properties-alphabetical-order' },
-        { rule: 'stylistic/linebreaks' },
-        { rule: 'stylistic/block-closing-brace-newline-before' },
-        { rule: 'stylistic/block-opening-brace-newline-after' },
-        { rule: 'stylistic/declaration-block-semicolon-newline-after' },
-        { rule: 'stylistic/declaration-block-semicolon-space-before' },
-        { rule: 'stylistic/declaration-block-trailing-semicolon' },
-        { rule: 'stylistic/no-missing-end-of-source-newline' }
+        { rule: '@stylistic/linebreaks' },
+        { rule: '@stylistic/block-closing-brace-newline-before' },
+        { rule: '@stylistic/block-opening-brace-newline-after' },
+        { rule: '@stylistic/declaration-block-semicolon-newline-after' },
+        { rule: '@stylistic/declaration-block-semicolon-space-before' },
+        { rule: '@stylistic/declaration-block-trailing-semicolon' },
+        { rule: '@stylistic/no-missing-end-of-source-newline' }
       ]
     }
   ]);
