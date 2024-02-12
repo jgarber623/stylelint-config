@@ -1,42 +1,66 @@
-const fs = require('node:fs');
-const stylelint = require('stylelint');
-const test = require('ava');
+import assert from "node:assert";
+import fs from "node:fs";
+import test from "node:test";
 
-const config = require('../index');
+import stylelint from "stylelint";
 
-test('module.exports', t => {
-  t.like(config, {
-    extends: ['stylelint-config-standard', '@stylistic/stylelint-config'],
-    plugins: ['stylelint-order']
-  });
+import config from "@jgarber/stylelint-config";
+
+test("default export", () => {
+  /**
+   * The Node.js assert module doesn't include a matcher similar to AVA's `like`
+   * matcher. So, manually assign the values under test to `actual`.
+   *
+   * @see {@link https://nodejs.org/docs/latest-v20.x/api/assert.html}
+   * @see {@link https://github.com/avajs/ava/blob/HEAD/docs/03-assertions.md#likeactual-selector-message}
+   */
+  const actual = {
+    extends: config.extends,
+    plugins: config.plugins,
+  };
+
+  const expected = {
+    extends: ["stylelint-config-standard", "@stylistic/stylelint-config"],
+    plugins: ["stylelint-order"],
+  };
+
+  assert.deepStrictEqual(actual, expected);
 });
 
-test('loads configuration and validates correct syntax', async t => {
-  const code = fs.readFileSync('./test/helpers/valid.css', 'utf8');
+test("loads the configuration and validates correct syntax", async () => {
+  const code = fs.readFileSync("./test/helpers/valid.css", "utf8");
   const { errored } = await stylelint.lint({ code, config });
 
-  t.false(errored);
+  assert.strictEqual(errored, false);
 });
 
-test('loads configuration and invalidates incorrect syntax', async t => {
-  const code = fs.readFileSync('./test/helpers/invalid.css', 'utf8');
+test("loads the configuration and invalidates incorrect syntax", async () => {
+  const code = fs.readFileSync("./test/helpers/invalid.css", "utf8");
   const { errored, results } = await stylelint.lint({ code, config });
 
-  t.true(errored);
+  /**
+   * The `results` array contains a single object with a `warnings` key whose
+   * value is an array of objects containing detailed error information. For the
+   * purposes of this test, we care most about the rule name.
+   */
+  const actual = {
+    errored,
+    warnings: results[0].warnings.map(({ rule }) => rule),
+  };
 
-  t.like(results, [
-    {
-      errored: true,
-      warnings: [
-        { rule: 'order/properties-alphabetical-order' },
-        { rule: '@stylistic/linebreaks' },
-        { rule: '@stylistic/block-closing-brace-newline-before' },
-        { rule: '@stylistic/block-opening-brace-newline-after' },
-        { rule: '@stylistic/declaration-block-semicolon-newline-after' },
-        { rule: '@stylistic/declaration-block-semicolon-space-before' },
-        { rule: '@stylistic/declaration-block-trailing-semicolon' },
-        { rule: '@stylistic/no-missing-end-of-source-newline' }
-      ]
-    }
-  ]);
+  const expected = {
+    errored: true,
+    warnings: [
+      "order/properties-alphabetical-order",
+      "@stylistic/linebreaks",
+      "@stylistic/block-closing-brace-newline-before",
+      "@stylistic/block-opening-brace-newline-after",
+      "@stylistic/declaration-block-semicolon-newline-after",
+      "@stylistic/declaration-block-semicolon-space-before",
+      "@stylistic/declaration-block-trailing-semicolon",
+      "@stylistic/no-missing-end-of-source-newline",
+    ],
+  };
+
+  assert.deepStrictEqual(actual, expected);
 });
