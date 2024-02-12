@@ -4,9 +4,9 @@ import test from "node:test";
 
 import stylelint from "stylelint";
 
-import config from "../index.js";
+import config from "@jgarber/stylelint-config";
 
-test("module.exports", t => {
+test("default export", () => {
   /**
    * The Node.js assert module doesn't include a matcher similar to AVA's `like`
    * matcher. So, manually assign the values under test to `actual`.
@@ -16,7 +16,7 @@ test("module.exports", t => {
    */
   const actual = {
     extends: config.extends,
-    plugins: config.plugins
+    plugins: config.plugins,
   };
 
   const expected = {
@@ -27,14 +27,14 @@ test("module.exports", t => {
   assert.deepStrictEqual(actual, expected);
 });
 
-test("loads the configuration and validates correct syntax", async t => {
+test("loads the configuration and validates correct syntax", async () => {
   const code = fs.readFileSync("./test/helpers/valid.css", "utf8");
   const { errored } = await stylelint.lint({ code, config });
 
   assert.strictEqual(errored, false);
 });
 
-test("loads the configuration and invalidates incorrect syntax", async t => {
+test("loads the configuration and invalidates incorrect syntax", async () => {
   const code = fs.readFileSync("./test/helpers/invalid.css", "utf8");
   const { errored, results } = await stylelint.lint({ code, config });
 
@@ -45,7 +45,7 @@ test("loads the configuration and invalidates incorrect syntax", async t => {
    */
   const actual = {
     errored,
-    warnings: results[0].warnings.map(({ rule }) => rule)
+    warnings: results[0].warnings.map(({ rule }) => rule),
   };
 
   const expected = {
@@ -58,8 +58,8 @@ test("loads the configuration and invalidates incorrect syntax", async t => {
       "@stylistic/declaration-block-semicolon-newline-after",
       "@stylistic/declaration-block-semicolon-space-before",
       "@stylistic/declaration-block-trailing-semicolon",
-      "@stylistic/no-missing-end-of-source-newline"
-    ]
+      "@stylistic/no-missing-end-of-source-newline",
+    ],
   };
 
   assert.deepStrictEqual(actual, expected);

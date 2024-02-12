@@ -22,8 +22,8 @@ export default {
       "always",
       {
         except: ["blockless-after-same-name-blockless", "first-nested"],
-        ignore: ["after-comment"]
-      }
+        ignore: ["after-comment"],
+      },
     ],
 
     /**
@@ -45,6 +45,6 @@ export default {
      *
      * @see {@link https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/unicode-bom}
      */
-    "@stylistic/unicode-bom": "never"
-  }
+    "@stylistic/unicode-bom": "never",
+  },
 };
